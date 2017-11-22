@@ -1,0 +1,28 @@
+{
+  "name": "air_data_server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "zhouxiaohaostudio@163.com",
+  "dependencies": {
+    "ali-oss": "^4.11.2",
+    "bluebird": "^3.5.1",
+    "body-parser": "~1.17.1",
+    "cheerio": "^1.0.0-rc.2",
+    "co": "^4.6.0",
+    "cookie-parser": "~1.4.3",
+    "express": "~4.15.2",
+    "express-logging": "^1.1.1",
+    "fs-extra": "^4.0.2",
+    "lodash": "^4.17.4",
+    "log4js": "^2.3.4",
+    "logops": "^2.1.0",
+    "request": "^2.83.0",
+    "superagent": "^3.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
