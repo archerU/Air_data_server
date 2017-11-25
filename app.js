@@ -12,8 +12,14 @@ const client = new OSS({region: config.oss.region, accessKeyId: config.oss.acces
 
 const timer = 60 * 60 * 1000;
 
+// initFile();
 getAirData();
 setInterval(getAirData, timer);
+
+// 初始化数据
+// function initFile() {
+//   appendData('air.txt', `date,pm25,date,pm10,date,o3,date,no2,date,so2,date,co,date,t,date,p,date,h`);
+// }
 
 // 爬虫抓取数据
 function getAirData() {
