@@ -12,6 +12,7 @@ const client = new OSS({region: config.oss.region, accessKeyId: config.oss.acces
 
 const timer = 60 * 60 * 1000;
 
+getAirData();
 setInterval(getAirData, timer);
 
 // 爬虫抓取数据
@@ -38,9 +39,12 @@ function getAirData() {
       airData.data.push(obj);
     })
     // console.log('airData', airData)
-
+    const csvData = airData.data.map((item) => {
+      return `${item.h},${item.v}`;
+    });
+    // console.log('csvData', csvData.join(','))
     // 数据写入文件
-    appendData('air.txt', airData);
+    appendData('air.txt', csvData.join(','));
 
     // 文件上传到oss
     updateOSS('air', 'data/air.txt');
@@ -50,7 +54,7 @@ function getAirData() {
 // 数据写入文件
 function appendData(key, data) {
   const file = path.join(config.fs.directory, key);
-  fs.appendFileSync(file, JSON.stringify(data) + '\n');
+  fs.appendFileSync(file, data + '\n');
 }
 
 // 文件上传到oss
