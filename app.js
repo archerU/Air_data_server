@@ -49,6 +49,22 @@ function getAirData() {
       return `${item.h},${item.v}`;
     });
     // console.log('csvData', csvData.join(','))
+    // const qfile = path.join(config.fs.directory, 'new_air.txt');
+    // const q = fs.readFileSync(qfile).toString();
+    // const r = [];
+    //
+    // const ufile = path.join(config.fs.directory, 'air.txt');
+    // JSON.parse(q).air.forEach((items) => {
+    //   let o = items.data.map((item) => {
+    //     return `${item.h},${item.v}`;
+    //   })
+    //   fs.appendFileSync(ufile, o.join(',') + '\n')
+    // })
+
+    // fs.appendFileSync(ufile, r)
+    // const u = JSON.parse(`${q}`)
+    // console.log('u', r.json(','))
+
     // 数据写入文件
     appendData('air.txt', csvData.join(','));
 
