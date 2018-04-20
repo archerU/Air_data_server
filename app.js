@@ -10,7 +10,7 @@ const pkg = require('./package.json');
 
 const client = new OSS({region: config.oss.region, accessKeyId: config.oss.accessKeyId, accessKeySecret: config.oss.accessKeySecret, bucket: config.oss.bucket});
 
-const timer = 60 * 60 * 1000;
+const timer = 30 * 60 * 1000;
 
 // initFile();
 getAirData();
